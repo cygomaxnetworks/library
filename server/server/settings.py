@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'books',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'server.urls'
@@ -70,6 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'server.wsgi.application'
+CORS_ORIGIN_ALLOW_ALL = DEBUG
 
 
 # Database
@@ -121,7 +124,30 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 REST_FRAMEWORK = {
-  'DEFAULT_PERMISSION_CLASSES': [
-   'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-  ]
+  'PAGE_SIZE': 100,
+
+  'EXCEPTION_HANDLER':
+    'rest_framework_json_api.exceptions.exception_handler',
+
+  'DEFAULT_PAGINATION_CLASS':    'rest_framework_json_api.pagination.JsonApiPageNumberPagination',
+'DEFAULT_PARSER_CLASSES': (
+    'rest_framework_json_api.parsers.JSONParser',
+    'rest_framework.parsers.FormParser',
+    'rest_framework.parsers.MultiPartParser'
+  ),
+'DEFAULT_RENDERER_CLASSES': (
+    'rest_framework_json_api.renderers.JSONRenderer',
+    'rest_framework.renderers.BrowsableAPIRenderer',
+   ),
+'DEFAULT_METADATA_CLASS': 'rest_framework_json_api.metadata.JSONAPIMetadata',
+'DEFAULT_FILTER_BACKENDS': (
+     'rest_framework.filters.OrderingFilter',
+    ),
+'ORDERING_PARAM': 'sort',
+
+   'TEST_REQUEST_RENDERER_CLASSES': (
+     'rest_framework_json_api.renderers.JSONRenderer',
+    ),
+
+   'TEST_REQUEST_DEFAULT_FORMAT': 'vnd.api+json'
 }
