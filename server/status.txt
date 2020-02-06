@@ -1,0 +1,96 @@
+left the app at the point where, we need to update the ember tags {{action}}. I will proceed after getting more information on the error below
+
+
+client/templates/book.hbs
+  -:-  error  Parse error on line 64:
+</div>
+--------------------^
+Expecting 'OPEN_ENDBLOCK', got 'EOF'  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+  -:-  error  Cannot read property 'type' of undefined  undefined
+
+===== 1 Template Linting Error
+
+(node:42292) UnhandledPromiseRejectionWarning: Error: Parse error on line 64:
+</div>
+--------------------^
+Expecting 'OPEN_ENDBLOCK', got 'EOF'
+    at Parser.parseError (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\ember-source\dist\ember-template-compiler.js:10006:15)
+    at Parser.parse (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\ember-source\dist\ember-template-compiler.js:10081:20)
+    at parse (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\ember-source\dist\ember-template-compiler.js:11259:36)
+    at preprocess (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\ember-source\dist\ember-template-compiler.js:5947:71)
+    at precompile (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\ember-source\dist\ember-template-compiler.js:4079:38)
+    at Object.precompile (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\ember-source\dist\ember-template-compiler.js:8107:37)
+    at Object.template (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\ember-cli-htmlbars\lib\utils.js:178:38)
+    at TemplateCompiler.processString (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\ember-cli-htmlbars\lib\template-compiler-plugin.js:72:15)
+    at resolve (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\broccoli-persistent-filter\lib\strategies\persistent.js:56:23)
+    at initializePromise (C:\Users\User\Desktop\2020\Projects\Library\server\client\node_modules\broccoli-persistent-filter\node_modules\rsvp\dist\rsvp.js:523:7)
+(node:42292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 26)
+file changed templates\book.hbs
+
+client/templates/book.hbs
+  8:14  error  Do not use `action` as <button {{action ...}} />. Instead, use the `on` modifier and `fn` helper.  no-action
+  9:14  error  Do not use `action` as <button {{action ...}} />. Instead, use the `on` modifier and `fn` helper.  no-action
+  13:14  error  Do not use `action` as <button {{action ...}} />. Instead, use the `on` modifier and `fn` helper.  no-action
+  53:14  error  Do not use `action` as <button {{action ...}} />. Instead, use the `on` modifier and `fn` helper.  no-action
+  54:14  error  Do not use `action` as <button {{action ...}} />. Instead, use the `on` modifier and `fn` helper.  no-action
+  61:10  error  Do not use `action` as <button {{action ...}} />. Instead, use the `on` modifier and `fn` helper.  no-action
+  62:10  error  Do not use `action` as <button {{action ...}} />. Instead, use the `on` modifier and `fn` helper.  no-action
+  20:4  error  You are using the component {{model.title}} with curly component syntax. You should use <Model.Title> instead. If it is actually a helper you must manually add it to the 'no-curly-component-invocation' rule configuration, e.g. `'no-curly-component-invocation': { allow: ['model.title'] }`.  no-curly-component-invocation
+  23:4  error  You are using the component {{model.author}} with curly component syntax. You should use <Model.Author> instead. If it is actually a helper you must manually add it to the 'no-curly-component-invocation' rule configuration, e.g. `'no-curly-component-invocation': { allow: ['model.author'] }`.  no-curly-component-invocation
+  26:4  error  You are using the component {{model.description}} with curly component syntax. You should use <Model.Description> instead. If it is actually a helper you must manually add it to the 'no-curly-component-invocation' rule configuration, e.g. `'no-curly-component-invocation': { allow: ['model.description'] }`.  no-curly-component-invocation
+  32:4  error  You are using the component {{input}} with curly component syntax. You should use <Input> instead. If it is actually a helper you must manually add it to the 'no-curly-component-invocation' rule configuration, e.g. `'no-curly-component-invocation': { allow: ['input'] }`.  no-curly-component-invocation
+  38:4  error  You are using the component {{input}} with curly component syntax. You should use <Input> instead. If it is actually a helper you must manually add it to the 'no-curly-component-invocation' rule configuration, e.g. `'no-curly-component-invocation': { allow: ['input'] }`.  no-curly-component-invocation
+  44:4  error  You are using the component {{textarea}} with curly component syntax. You should use <Textarea> instead. If it is actually a helper you must manually add it to the 'no-curly-component-invocation' rule configuration, e.g. `'no-curly-component-invocation': { allow: ['textarea'] }`.  no-curly-component-invocation
+  2:28  error  Ambiguous path 'confirmingDelete' is not allowed. Use '@confirmingDelete' if it is a named argument or 'this.confirmingDelete' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['confirmingDelete'] }.  no-implicit-this
+  3:10  error  Ambiguous path 'confirmingDelete' is not allowed. Use '@confirmingDelete' if it is a named argument or 'this.confirmingDelete' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['confirmingDelete'] }.  no-implicit-this
+  8:32  error  Ambiguous path 'model' is not allowed. Use '@model' if it is a named argument or 'this.model' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['model'] }.  no-implicit-this
+  9:28  error  Ambiguous path 'confirmingDelete' is not allowed. Use '@confirmingDelete' if it is a named argument or 'this.confirmingDelete' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['confirmingDelete'] }.  no-implicit-this
+  13:28  error  Ambiguous path 'confirmingDelete' is not allowed. Use '@confirmingDelete' if it is a named argument or 'this.confirmingDelete' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['confirmingDelete'] }.  no-implicit-this
+  20:6  error  Ambiguous path 'model.title' is not allowed. Use '@model.title' if it is a named argument or 'this.model.title' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['model.title'] }.  no-implicit-this
+  23:6  error  Ambiguous path 'model.author' is not allowed. Use '@model.author' if it is a named argument or 'this.model.author' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['model.author'] }.  no-implicit-this
+  26:6  error  Ambiguous path 'model.description' is not allowed. Use '@model.description' if it is a named argument or 'this.model.description' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['model.description'] }.  no-implicit-this
+  28:8  error  Ambiguous path 'isEditing' is not allowed. Use '@isEditing' if it is a named argument or 'this.isEditing' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['isEditing'] }.  no-implicit-this
+  33:12  error  Ambiguous path 'form.title' is not allowed. Use '@form.title' if it is a named argument or 'this.form.title' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['form.title'] }.  no-implicit-this
+  39:12  error  Ambiguous path 'form.author' is not allowed. Use '@form.author' if it is a named argument or 'this.form.author' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['form.author'] }.  no-implicit-this
+  45:12  error  Ambiguous path 'form.description' is not allowed. Use '@form.description' if it is a named argument or 'this.form.description' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['form.description'] }.  no-implicit-this
+  53:32  error  Ambiguous path 'model' is not allowed. Use '@model' if it is a named argument or 'this.model' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['model'] }.  no-implicit-this
+  54:28  error  Ambiguous path 'isEditing' is not allowed. Use '@isEditing' if it is a named argument or 'this.isEditing' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['isEditing'] }.  no-implicit-this
+  61:24  error  Ambiguous path 'isEditing' is not allowed. Use '@isEditing' if it is a named argument or 'this.isEditing' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['isEditing'] }.  no-implicit-this
+  62:24  error  Ambiguous path 'confirmingDelete' is not allowed. Use '@confirmingDelete' if it is a named argument or 'this.confirmingDelete' if it is a property on 'this'. If it is a helper or component that has no arguments you must manually add it to the 'no-implicit-this' rule configuration, e.g. 'no-implicit-this': { allow: ['confirmingDelete'] }.  no-implicit-this
+  8:6  error  All `<button>` elements should have a valid `type` attribute  require-button-type
